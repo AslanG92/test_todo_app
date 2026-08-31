@@ -26,7 +26,7 @@ function renderTodos() {
     todosContainer.innerHTML = "";
 
     if (todoList.length === 0) {
-        todosContainer.innerHTML = "<h4>NO TASKS, please add some one if you need</h4>";
+        todosContainer.innerHTML = "<h3>NO TASKS, please add some one if you need</h3>";
         return;
     }
     todoList.forEach((todo) => {
