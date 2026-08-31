@@ -220,6 +220,8 @@
                 cursor: pointer;
                 border-radius: 15px;
                 font-size: 24px;
+                outline: none;
+                -webkit-tap-highlight-color: transparent;
                 font-family: 'Playfair Display', sans-serif;
                 color: #7a6a5a;
                 text-shadow:
