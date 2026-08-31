@@ -1,0 +1,282 @@
+.todo-list-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+
+    .todos-container {
+        display: flex;
+        width: 100%;
+        height: 350px;
+
+        .todos-info {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+
+            .todos-info-task-name {
+                padding: 20px 0 0 40px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 400;
+                font-size: 20px;
+                color: #7a6a5a;
+                text-shadow:
+                    2px 2px 3px rgba(255, 255, 255, 0.8),
+                    -1px -1px 2px rgba(100, 80, 60, 0.1);
+            }
+
+            .todos-text {
+                width: 100%;
+                height: 50px;
+                padding: 10px 20px 0 20px;
+                justify-self: start;
+                font-family: "Playpen Sans", sans-serif;
+                font-weight: 200;
+                font-size: 24px;
+                color: #342f25;
+                word-break: break-word;
+                text-align: start;
+                overflow: auto;
+                overflow-wrap: anywhere;
+            }
+
+            .todos-info-task-date {
+                padding: 20px 0 0 40px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 400;
+                font-size: 20px;
+                color: #7a6a5a;
+                text-shadow:
+                    2px 2px 3px rgba(255, 255, 255, 0.8),
+                    -1px -1px 2px rgba(100, 80, 60, 0.1);
+            }
+
+            .todos-creation-date {
+                justify-self: start;
+                padding: 10px 0 0 20px;
+                margin-bottom: 50px;
+                font-family: "Playpen Sans", sans-serif;
+                font-size: 24px;
+                font-weight: 200;
+                font-style: italic;
+                color: #342f25;
+            }
+
+            @media (max-width: 425px) {
+                .todos-info-task-name {
+                    font-size: 18px;
+                }
+
+                .todos-text {
+                    font-size: 20px;
+                }
+
+                .todos-info-task-date {
+                    font-size: 18px;
+                }
+
+                .todos-creation-date {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .action-field {
+            position: absolute;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 12px;
+            background: transparent;
+            box-shadow: inset 1px 1px 2px rgba(139, 119, 101, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.6);
+
+            .checkbox-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .checkbox {
+                    width: 25px;
+                    height: 25px;
+                    background-color: #ece5da;
+                    margin-right: 5px;
+                    border-radius: 7px;
+                    border: 1px solid #555;
+                    position: relative;
+                    overflow: hidden;
+                    transition:
+                        all 0.3s ease,
+                        0.2s border cubic-bezier(0.26, 0.62, 0.43, 1.06);
+                    cursor: pointer;
+
+                    .checkbox-input {
+                        display: none;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 232%;
+                        left: 50%;
+                        transform: translate(-50%, -100%) scale(0.75);
+                        border-radius: 50% 20% / 30% 70%;
+                        width: 115%;
+                        height: 115%;
+                        filter: blur(4px);
+                        background: linear-gradient(145deg, #c9b8a8, #bfae9e);
+                        z-index: 1;
+                        transition:
+                            transform 0.56s cubic-bezier(0.5, 0.26, 0.7, 1.8),
+                            top 0.38s ease,
+                            filter 0.48s ease;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 75%;
+                        height: 75%;
+                        clip-path: polygon(41% 52%,
+                                26% 35%,
+                                10% 51%,
+                                37% 88%,
+                                37% 88%,
+                                37% 88%,
+                                37% 88%,
+                                91% 33%,
+                                78% 18%);
+                        background: rgb(17, 17, 17);
+                        z-index: 1;
+                        opacity: 0;
+                        transition: all 0.3s cubic-bezier(0.93, 0.17, 0.43, 1.07);
+                    }
+
+                    &:has(.checkbox-input:checked) {
+                        border: 0px solid;
+                    }
+
+                    @media (max-width: 425px) {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 6px;
+                        margin-right: 2px;
+                    }
+
+                    @media (max-width: 320px) {
+                        width: 18px;
+                        height: 18px;
+                        border-radius: 6px;
+                        margin-right: 2px;
+                    }
+                }
+
+                .cbx-text {
+                    font-size: 24px;
+                    font-family: 'Playfair Display', sans-serif;
+                    color: #7a6a5a;
+                    text-shadow:
+                        2px 2px 3px rgba(255, 255, 255, 0.8),
+                        -1px -1px 2px rgba(100, 80, 60, 0.1);
+
+                    @media (max-width: 425px) {
+                        font-size: 18px;
+                    }
+
+                    @media (max-width: 320px) {
+                        font-size: 16px;
+                    }
+
+                }
+
+                &:has(.checkbox-input:checked) .checkbox::before {
+                    top: 50%;
+                    transform: translate(-50%, -50%) scale(1);
+                    filter: blur(0px);
+                }
+
+                &:has(.checkbox-input:checked) .checkbox::after {
+                    opacity: 1;
+                    transform: translate(-50%, -50%) perspective(70px) scale(1);
+                    animation: checkmarkAnimation 0.5s ease-in-out forwards;
+                }
+            }
+
+            .remove-todos-btn {
+                width: 150px;
+                height: 50px;
+                border: 1px solid #c7b39f;
+                background: transparent;
+                cursor: pointer;
+                border-radius: 15px;
+                font-size: 24px;
+                font-family: 'Playfair Display', sans-serif;
+                color: #7a6a5a;
+                text-shadow:
+                    2px 2px 3px rgba(255, 255, 255, 0.8),
+                    -1px -1px 2px rgba(100, 80, 60, 0.1);
+
+                &:disabled {
+                    cursor: not-allowed;
+                }
+
+                &:hover {
+                    box-shadow:
+                        4px 4px 10px rgba(139, 119, 101, 0.7),
+                        -4px -4px 10px rgba(255, 255, 255, 0.8);
+                }
+
+                &:active {
+                    border: 1px solid #c7b39f;
+                    background: transparent;
+                    box-shadow: inset 1px 1px 2px rgba(139, 119, 101, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.6);
+                }
+
+                @media (max-width: 425px) {
+                    width: 120px;
+                    font-size: 18px;
+                }
+
+                @media (max-width: 320px) {
+                    width: 100px;
+                    height: 50px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes checkmarkAnimation {
+    0% {
+        opacity: 0;
+        transform: perspective(70px) translate(10%, -20%) rotate(43deg) rotateY(100deg) scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: perspective(70px) translate(-57%, -42%) rotate(32deg) rotateY(55deg) scale(1.32);
+    }
+
+    100% {
+        opacity: 1;
+        transform: perspective(70px) translate(-50%, -50%) rotate(0deg) rotateY(0deg) scale(1);
+    }
+}
+
+.activeCh .todos-text,
+.activeCh .todos-creation-date,
+.activeCh .cbx-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

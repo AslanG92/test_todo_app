@@ -1,0 +1,228 @@
+.todo-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 30px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #d4c4b5, #c4b4a4);
+    border-radius: 20px;
+    box-shadow:
+        6px 6px 16px rgba(139, 119, 101, 0.7),
+        -6px -6px 16px rgba(255, 255, 255, 0.8);
+
+    .todo-header,
+    .todo-task-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+
+        .todo-title,
+        .todo-task-title {
+            font-family: 'Playfair Display', sans-serif;
+            font-size: 55px;
+            color: #ae9986;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px rgba(0, 0, 0, 1);
+        }
+
+        @media (max-width: 430px) {
+            .todo-title {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .todo-task-header {
+        margin-bottom: 50px;
+    }
+
+    .todo-add-wrapper {
+        width: 100%;
+        max-width: 700px;
+        height: 150px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 20px;
+        border-radius: 20px;
+        box-shadow:
+            6px 6px 16px rgba(139, 119, 101, 0.7),
+            -6px -6px 16px rgba(255, 255, 255, 0.8);
+        position: relative;
+
+        .todo-span-container {
+            align-items: center;
+            position: absolute;
+            padding: 20px 20px 0 20px;
+
+            .todo-span-desckription {
+
+                font-size: 20px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 400;
+                color: #7a6a5a;
+                text-shadow:
+                    2px 2px 3px rgba(255, 255, 255, 0.8),
+                    -1px -1px 2px rgba(100, 80, 60, 0.1);
+            }
+
+            @media (max-width: 430px) {
+                .todo-span-desckription {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .todo-input-box {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #3a2a1a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin: 80px 0 0 20px;
+            width: 100%;
+            height: 50px;
+            padding: 0 20px;
+            border-radius: 12px;
+            background: transparent;
+            box-shadow:
+                inset 4px 4px 8px rgba(139, 119, 101, 0.4),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+
+            .todo-input {
+                border: none;
+                background: transparent;
+                font-size: 24px;
+                color: #5a4a3a;
+                outline: none;
+                width: 100%;
+                font-family: "Playpen Sans", cursive;
+                font-weight: 100;
+                flex-grow: 4;
+                user-select: none;
+                cursor: pointer;
+            }
+        }
+
+        .todo-input-box:focus-within {
+            background: transparent;
+            box-shadow: inset 1px 1px 2px rgba(139, 119, 101, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.6);
+        }
+
+        .todo-add-btn {
+            width: 48px;
+            height: 48px;
+            margin: 80px 20px 0 0;
+            border-radius: 12px;
+            background: transparent;
+            border: 1px solid #c7b39f;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+
+            &:hover {
+                box-shadow:
+                    4px 4px 10px rgba(139, 119, 101, 0.7),
+                    -4px -4px 10px rgba(255, 255, 255, 0.8);
+            }
+
+            &:active {
+                border: 1px solid #c7b39f;
+                background: transparent;
+                box-shadow: inset 1px 1px 2px rgba(139, 119, 101, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        .todo-add-btn svg {
+            width: 30px;
+            height: 30px;
+            stroke: #6a5a4a;
+            stroke-width: 2;
+            fill: none;
+        }
+    }
+
+    @media (max-width: 430px) {
+        .todo-add-wrapper {
+            height: 250px;
+            flex-wrap: wrap;
+
+            .todo-input-box {
+                margin: 85px 10px 0 10px;
+
+                .todo-input {
+                    font-size: 20px;
+                }
+            }
+
+            .todo-search {
+                font-size: 20px;
+            }
+
+            .todo-add-btn {
+                margin: 0 auto;
+                flex-grow: 0;
+                width: 150px;
+                box-shadow: none;
+                border: none;
+                border: 1px solid #c7b39f;
+                cursor: pointer;
+                border-radius: 15px;
+                font-size: 18px;
+                font-family: 'Playfair Display', sans-serif;
+                color: #7a6a5a;
+                text-shadow:
+                    2px 2px 3px rgba(255, 255, 255, 0.8),
+                    -1px -1px 2px rgba(100, 80, 60, 0.1);
+
+                .add-icon {
+                    display: none !important;
+                }
+
+                &::after {
+                    content: "ADD TASK";
+                    font-family: 'Playfair Display', sans-serif;
+                    font-size: 18px;
+                    color: #7a6a5a;
+                    text-shadow:
+                        2px 2px 3px rgba(255, 255, 255, 0.8),
+                        -1px -1px 2px rgba(100, 80, 60, 0.1);
+                }
+
+                &:active {
+                    background: transparent;
+                    border: 1px solid #c7b39f;
+                    box-shadow: inset 1px 1px 2px rgba(139, 119, 101, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+
+        .todo-search-box {
+            height: 150px;
+        }
+    }
+
+    .todo-task-header {
+        margin-top: 70px;
+
+        .todo-task-title {
+            font-size: 45px;
+        }
+
+        @media (max-width: 430px) {
+            .todo-task-title {
+                font-size: 26px;
+            }
+        }
+    }
+}

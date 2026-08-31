@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+    <script type="module" src="functions.js"></script>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>TODO app</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <h1 class="header-title">Write it down, or else you will forget to do it !</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="todo">
+            <div class="todo-container">
+                <div class="todo-header">
+                    <h2 class="todo-title">TO-DO LIST:</h2>
+                </div>
+
+                <div class="todo-add-wrapper">
+                    <div class="todo-span-container">
+                        <span class="todo-span-desckription">Please come up with your task and enter it below:</span>
+                    </div>
+
+                    <div class="todo-input-box">
+                        <input autocomplete="off" class="todo-input active" type="text"
+                            placeholder="type your task ..........." data-add-todo-input />
+                    </div>
+
+                    <button id="add-todo" class="todo-add-btn" data-add-todo-btn>
+                        <svg class="add-icon" aria-label="add icon">
+                            <use href="assets/sprites.svg#add-icon"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="todo-add-wrapper todo-search-box">
+                    <div class="todo-span-container">
+                        <span class="todo-span-desckription">Enter letters or words to search for tasks:</span>
+                    </div>
+
+                    <input autocomplete="off" class="todo-search active" type="text"
+                        placeholder="search your task ..........." data-add-todo-search />
+                </div>
+
+                <div class="todo-task-header">
+                    <h2 class="todo-task-title">MY TASK LIST:</h2>
+                </div>
+
+                <div class="todo-list-container" data-todo-container></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h2 class="footer-title">
+                sic parvis magna</h2>
+        </div>
+    </footer>
+
+    <template data-todos-templete>
+        <div class="todo-add-wrapper todos-container ">
+            <div class="todos">
+                <div class="todos-info">
+                    <span class="todos-info-task-name">Your task: </span>
+                    <p class="todos-text" data-todos-text>some text</p>
+                    <span class="todos-info-task-date">Created date: </span>
+                    <span class="todos-creation-date" data-todos-date>05-9-2026</span>
+                </div>
+
+                <div class="action-field">
+                    <div class="checkbox-container">
+                        <label class="checkbox">
+                            <input class="checkbox-input" type="checkbox" data-todo-checkbox />
+                        </label>
+                        <label class="cbx-text">Done task</label>
+                    </div>
+
+                    <button class="remove-todos-btn" data-remove-todos-btn>Delete task</button>
+                </div>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>

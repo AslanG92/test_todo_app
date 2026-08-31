@@ -1,0 +1,33 @@
+.todo-search-box {
+
+    margin-top: 50px;
+
+    .todo-search {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        padding: 0 20px;
+        border-radius: 12px;
+        border: none;
+        font-family: "Playpen Sans", cursive;
+        font-weight: 100;
+        font-size: 24px;
+        color: #5a4a3a;
+        transition: all 0.2s ease;
+        margin: 85px 20px 0 20px;
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+        background: transparent;
+        box-shadow:
+            inset 4px 4px 8px rgba(139, 119, 101, 0.4),
+            inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+
+        &:focus-within {
+            background: transparent;
+            box-shadow: inset 1px 1px 2px rgba(139, 119, 101, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.6);
+        }
+    }
+
+}
